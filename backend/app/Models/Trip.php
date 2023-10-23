@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Trip extends Model
 {
     use HasFactory;
+
+    protected $quarded = [];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function driver()
+    {
+        return $this->belongsTo(Driver::class);
+    }
 }
